@@ -1,8 +1,8 @@
-import unittest
-import logging
 import io
+import logging
+import unittest
 
-from src.utils.logging import get_logger, JSONFormatter
+from RecSys.utils.logging import JSONFormatter, get_logger
 
 
 class TestLogger(unittest.TestCase):

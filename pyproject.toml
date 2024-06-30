@@ -1,11 +1,26 @@
 [tool.poetry]
-name = "<project_name>"
+name = "RecSys"
 version = "0.0.0"
-description = "<description>"
+description = "Recommendation system library and tutorial."
 authors = ["Happydog <happydog0930@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "<project_name>", from = "src" }]
+packages = [{ include = "RecSys", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+rich = "^13.7.1"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+pytest = "^8.2.1"
+pytest-mock = "^3.14.0"
+pytest-cov = "^5.0.0"
+flake8 = "^7.0.0"
+mypy = "^1.10.0"
+black = {extras = ["jupyter"], version = "^24.4.2"}
+isort = "^5.13.2"
 
 [build-system]
 requires = ["poetry-core"]
@@ -18,4 +33,4 @@ line-length = 79
 profile = "black"
 line_length = 79
 src_paths = ["src", "tests"]
-known_first_party = ["autonotellm"]
+known_first_party = ["RecSys"]

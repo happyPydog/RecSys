@@ -14,5 +14,5 @@ format:
 	poetry run black .
 
 lint:
-	poetry run flake8 src/autonotellm
-	poetry run mypy src/autonotellm
+	poetry run flake8 src/RecSys
+	poetry run mypy src/RecSys

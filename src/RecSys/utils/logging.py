@@ -8,14 +8,14 @@ Here are some good reference source for writing custom loggers:
 
 """
 
-import os
-import sys
+import datetime as dt
 import json
 import logging
 import logging.config
+import os
+import sys
 import threading
 import typing as t
-import datetime as dt
 
 _lock = threading.Lock()
 _default_handler: t.Optional[logging.Handler] = None
@@ -74,7 +74,7 @@ def _config_root_logger(logger: logging.Logger) -> None:
             sys.stderr = open(os.devnull, "w")
 
         _default_handler = logging.StreamHandler()
-        _default_handler.flush = sys.stderr.flush
+        _default_handler.flush = sys.stderr.flush  # type: ignore
         _default_formatter = JSONFormatter()
         _default_handler.setFormatter(_default_formatter)
 
